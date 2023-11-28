@@ -7,7 +7,7 @@ const Products = () => {
 
   const handleFetchClick = () => {
     send("FETCH");
-  };
+  }; 
   console.log(state);
   return (
     <div className="max-w-[1200px] mx-auto my-0 p-3">
