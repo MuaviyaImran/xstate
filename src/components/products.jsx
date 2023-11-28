@@ -8,12 +8,20 @@ const Products = () => {
   const handleFetchClick = () => {
     send("FETCH");
   };
-console.log(state)
+  console.log(state);
   return (
     <div className="max-w-[1200px] mx-auto my-0 p-3">
-      {state.matches("idle") && <button className="bg-slate-300 p-3 rounded-xl m-3" onClick={handleFetchClick}>
-        Fetch Products
-      </button>}
+      {state.matches("idle") && (
+        <div className="h-screen items-center flex justify-center flex-col">
+          <p className="text-3xl font-extrabold">XState</p>
+          <button
+            className="bg-slate-300 p-3 rounded-xl m-3"
+            onClick={handleFetchClick}
+          >
+            Fetch Products
+          </button>
+        </div>
+      )}
       {state.matches("loading") && <p>Loading...</p>}
       {state.matches("success") && (
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
